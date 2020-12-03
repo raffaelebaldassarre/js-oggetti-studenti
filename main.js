@@ -82,42 +82,38 @@ var classe = [
 console.log(classe); */
 
 
-//BONUS BONUS//
+//BONUS BONUS// //REGISTRO DI CLASSE
 
-
-class studente {
+    class studente {
     constructor(nome , cognome, età) {
         this.nome = nome,
         this.cognome = cognome,
         this.età = età
     }
 }
-alert("Benvenuto Professore della classe #23 qui può compilare il registro");
-
+alert("Registro della classe #23");
+var classe = [];
 var compilaRegistro=false;
-while(compilaRegistro !== true){
 
+while(compilaRegistro != true){
     var nomeStudente = prompt("Inserire nome");
     var cognomeStudente = prompt("Inserire cognome");
     var etàStudente = Number(prompt("Inserire età"));
-    var infoStudente;
-    function nuovoIscritto(infoStudente){
-        var infoStudente = new studente(nomeStudente,cognomeStudente,etàStudente);
-        return infoStudente    
-    }
-    var scelta = prompt('Vuoi inserire un altro studente nel registro? Digita "Si" o "No"');
-    if(scelta == "No"){
+    var infoStudente = new studente(nomeStudente,cognomeStudente,etàStudente);
+    
+    classe.push(infoStudente);
+
+    var scelta = prompt('Per inserire un altro studente digita "S" altrimenti premi annulla');
+    
+    if(scelta == "s" || scelta == "S" ){
+        compilaRegistro=false;
+        
+    }else{
         compilaRegistro=true;
     }
+    console.log(classe);
 }
-nuovoIscritto(infoStudente)
-var nuovoIscritto = nuovoIscritto(infoStudente);
-
-var classe =[];
-if(!(classe.includes(nuovoIscritto))){
-    classe = [
-        nuovoIscritto
-    ];
-}
-
-console.log(classe);
+    //console.log(classe);
+    for (var key in classe) {
+        console.log(classe[key]);
+    }

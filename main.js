@@ -48,7 +48,7 @@ studenti.persona1 = {
 } */
 
 
-//BONUS//
+/* //BONUS//
 
 alert("Benvenuto alla classe #23");
 
@@ -63,7 +63,8 @@ class studente {
 var nomeStudente = prompt("Inserisci il tuo nome");
 var cognomeStudente = prompt("Inserisci il tuo cognome");
 var etàStudente = Number(prompt("Inserisci la tua età"));
-var infoStudente; 
+var infoStudente;
+
 function nuovoIscritto(infoStudente){
     var infoStudente = new studente(nomeStudente,cognomeStudente,etàStudente);
     return infoStudente
@@ -78,4 +79,45 @@ var classe = [
     Raffaele,
     nuovoIscritto
 ]
+console.log(classe); */
+
+
+//BONUS BONUS//
+
+
+class studente {
+    constructor(nome , cognome, età) {
+        this.nome = nome,
+        this.cognome = cognome,
+        this.età = età
+    }
+}
+alert("Benvenuto Professore della classe #23 qui può compilare il registro");
+
+var compilaRegistro=false;
+while(compilaRegistro !== true){
+
+    var nomeStudente = prompt("Inserire nome");
+    var cognomeStudente = prompt("Inserire cognome");
+    var etàStudente = Number(prompt("Inserire età"));
+    var infoStudente;
+    function nuovoIscritto(infoStudente){
+        var infoStudente = new studente(nomeStudente,cognomeStudente,etàStudente);
+        return infoStudente    
+    }
+    var scelta = prompt('Vuoi inserire un altro studente nel registro? Digita "Si" o "No"');
+    if(scelta == "No"){
+        compilaRegistro=true;
+    }
+}
+nuovoIscritto(infoStudente)
+var nuovoIscritto = nuovoIscritto(infoStudente);
+
+var classe =[];
+if(!(classe.includes(nuovoIscritto))){
+    classe = [
+        nuovoIscritto
+    ];
+}
+
 console.log(classe);

@@ -60,20 +60,22 @@ class studente {
     }
 }
 
-function nuovoIscritto(informazioniStudente){
-    var nomeStudente = prompt("Inserisci il tuo nome");
-    var cognomeStudente = prompt("Inserisci il tuo cognome");
-    var etàStudente = Number(prompt("Inserisci la tua età"));
-
-    var informazioniStudente = new studente(nomeStudente,cognomeStudente,etàStudente);
-    return informazioniStudente
+var nomeStudente = prompt("Inserisci il tuo nome");
+var cognomeStudente = prompt("Inserisci il tuo cognome");
+var etàStudente = Number(prompt("Inserisci la tua età"));
+var infoStudente; 
+function nuovoIscritto(infoStudente){
+    var infoStudente = new studente(nomeStudente,cognomeStudente,etàStudente);
+    return infoStudente
 }
+nuovoIscritto(infoStudente)
 
 var Raffaele = new studente("Raffaele","Baldassarre","32");
+var nuovoIscritto = nuovoIscritto(infoStudente);
 
 
 var classe = [
     Raffaele,
-    nuovoIscritto=informazioniStudente
+    nuovoIscritto
 ]
 console.log(classe);

@@ -97,9 +97,9 @@ $(function() {
     var compilaRegistro=false;
 
     while(compilaRegistro != true){
-        var nomeStudente = prompt("Inserire nome");
-        var cognomeStudente = prompt("Inserire cognome");
-        var etàStudente = Number(prompt("Inserire età"));
+        var nomeStudente = prompt("Inserire Nome");
+        var cognomeStudente = prompt("Inserire Cognome");
+        var etàStudente = Number(prompt("Inserire Età"));
         var infoStudente = new studente(nomeStudente,cognomeStudente,etàStudente);
         
         classe.push(infoStudente);

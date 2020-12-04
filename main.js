@@ -100,8 +100,8 @@ $(function() {
         var nomeStudente = prompt("Inserire Nome");
         var cognomeStudente = prompt("Inserire Cognome");
         var etàStudente = Number(prompt("Inserire Età"));
+
         var infoStudente = new studente(nomeStudente,cognomeStudente,etàStudente);
-        
         classe.push(infoStudente);
 
         var scelta = prompt('Per inserire un altro studente digita "S" altrimenti premi annulla');
@@ -112,6 +112,7 @@ $(function() {
         }else{
             compilaRegistro=true;
         }
+
         console.log(classe);
         for (var key in classe) {
             console.log(classe[key]);
@@ -123,15 +124,16 @@ $(function() {
         var nomeStudente = classe[key].nome;
         var cognomeStudente = classe[key].cognome;
         var etàStudente = classe[key].età;
-    var datiStudente = 
-    `
+
+        var datiStudente = 
+        `
         <div class="card">
-            <p style="color:red">${"Nome " + nomeStudente}</p>
-            <p style="color:blue">${"Cognome " + cognomeStudente}</p>
+            <p style="color:red">${nomeStudente}</p>
+            <p style="color:blue">${cognomeStudente}</p>
             <p >${"Età " + etàStudente}</p>
         </div>
         `
-    document.getElementById('prompt').insertAdjacentHTML('beforeend', datiStudente )
+        document.getElementById('prompt').insertAdjacentHTML('beforeend', datiStudente)
     }
 
 });

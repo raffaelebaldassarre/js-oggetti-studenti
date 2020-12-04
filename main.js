@@ -92,7 +92,7 @@ $(function() {
             this.età = età
         }
     }
-    alert("Registro della classe #23");
+    //alert("Registro della classe #23");
     var classe = [];
     var compilaRegistro=false;
 
@@ -113,9 +113,25 @@ $(function() {
             compilaRegistro=true;
         }
         console.log(classe);
+        for (var key in classe) {
+            console.log(classe[key]);
+        }
     }
+    
 
     for (var key in classe) {
-        console.log(classe[key]);
+        var nomeStudente = classe[key].nome;
+        var cognomeStudente = classe[key].cognome;
+        var etàStudente = classe[key].età;
+    var datiStudente = 
+    `
+        <div class="card">
+            <p style="color:red">${"Nome " + nomeStudente}</p>
+            <p style="color:blue">${"Cognome " + cognomeStudente}</p>
+            <p >${"Età " + etàStudente}</p>
+        </div>
+        `
+    document.getElementById('prompt').insertAdjacentHTML('beforeend', datiStudente )
     }
+
 });
